@@ -1,0 +1,12 @@
+node_modules/
+.pnpm-store/
+
+.env
+.env.local
+.nuxt
+.output
+.playwright
+
+# Screenshots temporales
+*.png
+!public/images/*.png
