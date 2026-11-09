@@ -1,0 +1,43 @@
+---
+interface Props {
+  title?: string
+  description?: string
+  ogTitle?: string
+}
+
+const {
+  title = 'Producciones Coquies Sound Power',
+  description = 'Alquiler de equipos de sonido, Turbo, iluminación y servicios de DJ profesionales para tus eventos.',
+  ogTitle = title,
+} = Astro.props
+
+import '@/styles/main.css'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-gray-50 font-[Poppins,sans-serif] antialiased">
+    <AppHeader client:load />
+    <main>
+      <slot />
+    </main>
+    <AppFooter client:idle />
+  </body>
+</html>

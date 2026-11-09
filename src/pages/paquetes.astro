@@ -1,0 +1,12 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PaquetesPage from '@/components/views/paquetes.vue'
+---
+
+<Layout
+  title="Paquetes y Precios - Coquies Sound Power"
+  description="Conoce nuestros paquetes de sonido, iluminación y DJ para eventos. Precios competitivos y paquetes personalizables."
+  ogTitle="Paquetes y Precios"
+>
+  <PaquetesPage client:idle />
+</Layout>
