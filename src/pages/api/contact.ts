@@ -22,7 +22,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const resendApiKey = import.meta.env.RESEND_API_KEY
-    const contactEmail = import.meta.env.CONTACT_EMAIL || 'info@coquiessound.com'
+    const contactEmail = import.meta.env.CONTACT_EMAIL || 'producionescoquies@gmail.com'
 
     if (!resendApiKey) {
       console.error('RESEND_API_KEY no está configurada')
@@ -137,7 +137,7 @@ export const POST: APIRoute = async ({ request }) => {
               }
 
               <div class="footer">
-                <p>Esta solicitud fue enviada desde el formulario de contacto de coquiessound.com</p>
+                <p>Esta solicitud fue enviada desde el formulario de contacto de Coquies Sound Power.</p>
               </div>
             </div>
           </div>

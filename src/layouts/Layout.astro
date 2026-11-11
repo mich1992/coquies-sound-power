@@ -29,15 +29,18 @@ import AppFooter from '@/components/AppFooter.vue'
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Righteous&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-gray-50 font-[Poppins,sans-serif] antialiased">
+  <body class="min-h-screen bg-[var(--cream)] text-[var(--black)] font-sans antialiased">
     <AppHeader client:load />
     <main>
       <slot />
     </main>
     <AppFooter client:idle />
+    <a class="wa-dock" href="https://wa.me/573007348547" target="_blank" rel="noopener noreferrer">
+      Cotizar por WhatsApp
+    </a>
   </body>
 </html>

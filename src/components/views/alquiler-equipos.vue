@@ -104,7 +104,7 @@
               Solicitar Cotización
             </UButton>
             <UButton 
-              href="https://wa.me/573001234567" 
+              href="https://wa.me/573007348547" 
               size="xl" 
               color="white"
               variant="outline"

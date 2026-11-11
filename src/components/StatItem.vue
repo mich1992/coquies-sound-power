@@ -1,6 +1,6 @@
 <template>
   <div ref="el" class="text-center">
-    <div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2" style="font-family: 'Righteous', sans-serif;">
+    <div class="text-3xl md:text-4xl font-bold text-[var(--gold)] mb-2">
       <span ref="numberRef">{{ displayValue }}</span><span>{{ suffix }}</span>
     </div>
     <div class="text-sm text-slate-300">

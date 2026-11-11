@@ -19,8 +19,8 @@
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-4 left-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-              <Icon :name="service.icon" class="w-6 h-6 text-white" />
+            <div class="w-12 h-12 bg-[var(--gold)] rounded-xl flex items-center justify-center">
+              <Icon :name="service.icon" class="w-6 h-6 text-[var(--black)]" />
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
             :key="index"
             class="flex items-start gap-2 text-sm text-slate-600"
           >
-            <Icon name="i-heroicons-check-circle-solid" class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+            <Icon name="i-heroicons-check-circle-solid" class="w-5 h-5 text-[var(--gold-deep)] flex-shrink-0 mt-0.5" />
             <span>{{ feature }}</span>
           </li>
         </ul>
@@ -77,8 +77,8 @@ defineProps<{
 }
 .card-hover:hover {
   transform: scale(1.02);
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(0, 0, 0, 0.08);
-  --tw-ring-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --tw-ring-color: rgba(255, 198, 26, 0.35);
 }
 
 .img-zoom {

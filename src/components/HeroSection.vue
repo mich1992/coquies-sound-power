@@ -7,8 +7,7 @@
         alt="Evento profesional"
         class="w-full h-full object-cover"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-900/75 to-blue-900/80"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/35"></div>
     </div>
 
     <!-- Content -->
@@ -32,11 +31,10 @@
           v-motion
           :initial="{ opacity: 0, y: 30 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 400 } }"
-          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
-          style="font-family: 'Righteous', sans-serif; line-height: 1.2;"
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]"
         >
-          Haz de tu Evento una
-          <span class="text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">Experiencia Inolvidable</span>
+          Sonido, luces y picó en Santa Marta para tu
+          <span class="text-[var(--gold)]">noche inolvidable</span>
         </h1>
 
         <!-- Description -->
@@ -46,7 +44,7 @@
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 600 } }"
           class="text-xl md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Alquiler de equipos de sonido profesional, iluminación LED, Turbo (Picó) y servicios de DJ para todo tipo de eventos.
+          Bodas, quinceañeros, cumpleaños y fiestas con el equipo y la energía que ya conocen en la ciudad.
         </p>
 
         <!-- CTA Buttons -->
@@ -59,8 +57,8 @@
           <UButton
             to="/contacto"
             size="xl"
-            color="white"
-            class="cursor-pointer bg-white/20 backdrop-blur-md border-2 border-white/60 text-white hover:bg-white/30 hover:border-white transition-all duration-300 font-semibold text-base px-8"
+            color="blue"
+            class="cursor-pointer px-8"
           >
             <Icon name="i-heroicons-chat-bubble-left-right" class="w-5 h-5 mr-2" />
             Solicitar Cotización
@@ -69,7 +67,8 @@
             to="/servicios"
             size="xl"
             color="white"
-            class="cursor-pointer bg-white/20 backdrop-blur-md border-2 border-white/60 text-white hover:bg-white/30 hover:border-white transition-all duration-300 font-semibold text-base px-8"
+            variant="outline"
+            class="cursor-pointer px-8"
           >
             <Icon name="i-heroicons-sparkles" class="w-5 h-5 mr-2" />
             Ver Servicios
@@ -105,8 +104,9 @@
 
 <script setup lang="ts">
 import StatItem from '@/components/StatItem.vue'
+import { heroPhoto } from '@/data/media'
 
-const heroImage = 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&h=1080&fit=crop&q=80'
+const heroImage = heroPhoto
 
 const stats = [
   { value: 500, suffix: '+', label: 'Eventos Realizados' },

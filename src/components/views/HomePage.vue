@@ -43,6 +43,33 @@
       </UContainer>
     </section>
 
+    <section class="py-16 bg-[var(--black)] text-white">
+      <UContainer>
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-3xl font-bold">Así se ven nuestros eventos</h2>
+            <p class="text-white/70 mt-2 max-w-xl">Material real de montajes, fiestas y equipos en Santa Marta.</p>
+          </div>
+          <UButton to="/galeria" color="blue" variant="soft">Ver galería</UButton>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <a
+            v-for="shot in eventShots"
+            :key="shot"
+            href="/galeria"
+            class="block aspect-[4/5] overflow-hidden rounded-xl group"
+          >
+            <img
+              :src="shot"
+              alt=""
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </UContainer>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="py-20 bg-slate-50">
       <UContainer>
@@ -68,31 +95,28 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
-
-      <UContainer class="relative z-10">
+    <section class="py-20 bg-[var(--charcoal)] text-white">
+      <UContainer>
         <ScrollReveal>
           <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Righteous', sans-serif;">
               ¿Listo para Hacer de tu Evento Algo Memorable?
             </h2>
-            <p class="text-xl text-blue-100 mb-8">
+            <p class="text-xl text-white/75 mb-8">
               Contáctanos ahora y recibe una cotización personalizada sin compromiso.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <UButton
                 to="/contacto"
                 size="xl"
-                color="white"
-                class="cursor-pointer shadow-lg shadow-blue-900/20 hover:shadow-xl transition-all duration-300"
+                color="blue"
+                class="cursor-pointer"
               >
                 <Icon name="i-heroicons-chat-bubble-left-right" class="w-5 h-5 mr-2" />
                 Solicitar Cotización
               </UButton>
               <UButton
-                href="https://wa.me/573001234567"
+                href="https://wa.me/573007348547"
                 size="xl"
                 color="white"
                 variant="outline"
@@ -117,13 +141,20 @@ import ScrollReveal from '@/components/ScrollReveal.vue'
 import ServiceCard from '@/components/ServiceCard.vue'
 import TestimonialCard from '@/components/TestimonialCard.vue'
 
+const eventShots = [
+  '/media/gallery/05-evento-5-thumb.webp',
+  '/media/gallery/07-evento-7-thumb.webp',
+  '/media/gallery/03-evento-3-thumb.webp',
+  '/media/gallery/08-evento-8-thumb.webp',
+]
+
 const services: Service[] = [
   {
     id: '1',
     title: 'Alquiler de Equipos',
     description: 'Equipos de sonido profesional de alta calidad para eventos de cualquier tamaño.',
     icon: 'i-heroicons-speaker-wave',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop',
+    image: '/media/gallery/07-evento-7-thumb.webp',
     slug: 'alquiler-equipos',
     features: [
       'Parlantes de alta potencia',
@@ -137,7 +168,7 @@ const services: Service[] = [
     title: 'Turbo (Picó)',
     description: 'Servicio de Turbo o Picó completo con sonido potente y efectos de luces espectaculares.',
     icon: 'i-heroicons-truck',
-    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=600&fit=crop',
+    image: '/media/gallery/13-equipo-alt-thumb.webp',
     slug: 'turbo-pico',
     features: [
       'Sonido de alta potencia',
@@ -151,7 +182,7 @@ const services: Service[] = [
     title: 'Iluminación',
     description: 'Sistemas de iluminación LED, efectos especiales y ambientación profesional.',
     icon: 'i-heroicons-light-bulb',
-    image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop',
+    image: '/media/gallery/03-evento-3-thumb.webp',
     slug: 'iluminacion',
     features: [
       'Luces LED RGB',
@@ -165,7 +196,7 @@ const services: Service[] = [
     title: 'Servicios de DJ',
     description: 'DJs profesionales con amplia experiencia y música para todos los gustos.',
     icon: 'i-heroicons-musical-note',
-    image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=800&h=600&fit=crop',
+    image: '/media/gallery/05-evento-5-thumb.webp',
     slug: 'dj',
     features: [
       'DJs profesionales',

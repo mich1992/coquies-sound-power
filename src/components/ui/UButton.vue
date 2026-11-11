@@ -21,7 +21,7 @@ const props = withDefaults(
   defineProps<{
     to?: string
     color?: 'blue' | 'gray' | 'white'
-    variant?: 'solid' | 'soft' | 'ghost'
+    variant?: 'solid' | 'soft' | 'ghost' | 'outline'
     size?: 'sm' | 'md' | 'lg' | 'xl'
     block?: boolean
     icon?: string
@@ -38,35 +38,39 @@ const props = withDefaults(
 const emit = defineEmits<{ click: [Event] }>()
 
 const sizeClasses: Record<string, string> = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-sm',
-  lg: 'px-5 py-2.5 text-base',
-  xl: 'px-6 py-3 text-base',
+  sm: 'h-9 px-3 text-sm',
+  md: 'h-11 px-4 text-sm',
+  lg: 'h-12 px-5 text-base',
+  xl: 'h-14 px-6 text-base',
 }
 
 const colorClasses: Record<string, Record<string, string>> = {
   blue: {
-    solid: 'bg-blue-600 text-white hover:bg-blue-700 shadow-md',
-    soft: 'bg-blue-50 text-blue-700 hover:bg-blue-100',
-    ghost: 'text-blue-600 hover:bg-blue-50',
+    solid: 'bg-[var(--gold)] text-[var(--black)] hover:bg-[var(--yellow)]',
+    soft: 'bg-[var(--black)]/5 text-[var(--black)] hover:bg-[var(--black)]/10',
+    ghost: 'text-[var(--black)] hover:bg-[var(--gold)]/20',
+    outline: 'border-2 border-[var(--black)] text-[var(--black)] bg-transparent hover:bg-[var(--black)] hover:text-[var(--gold)]',
   },
   gray: {
-    solid: 'bg-slate-600 text-white hover:bg-slate-700',
-    soft: 'bg-slate-100 text-slate-700 hover:bg-slate-200',
-    ghost: 'text-slate-600 hover:bg-slate-100',
+    solid: 'bg-[var(--black)] text-[var(--gold)] hover:bg-[var(--charcoal)]',
+    soft: 'bg-white/10 text-inherit hover:bg-white/20',
+    ghost: 'text-inherit hover:bg-white/10',
+    outline: 'border-2 border-current bg-transparent hover:bg-white/10',
   },
   white: {
-    solid: 'bg-white text-slate-900 hover:bg-slate-100',
-    soft: 'bg-white/20 text-white hover:bg-white/30',
-    ghost: 'text-white hover:bg-white/10',
+    solid: 'bg-white text-[var(--black)] hover:bg-[var(--cream)]',
+    soft: 'bg-white/15 text-inherit hover:bg-white/25',
+    ghost: 'text-inherit hover:bg-white/10',
+    outline: 'border-2 border-current bg-transparent hover:bg-white/10',
   },
 }
 
 const buttonClasses = computed(() => [
-  'inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-colors',
+  'cq-btn inline-flex items-center justify-center gap-2 font-bold rounded-full cursor-pointer',
   sizeClasses[props.size],
   colorClasses[props.color]?.[props.variant] ?? colorClasses.blue.solid,
   props.block ? 'w-full' : '',
+  props.disabled ? 'opacity-50 pointer-events-none' : '',
   props.class,
 ])
 
@@ -74,3 +78,19 @@ function onClick(e: Event) {
   emit('click', e)
 }
 </script>
+
+<style scoped>
+.cq-btn {
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), background-color 140ms ease, color 140ms ease;
+}
+
+.cq-btn:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cq-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+</style>

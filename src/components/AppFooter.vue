@@ -1,110 +1,69 @@
 <template>
-  <footer class="bg-slate-900 text-white mt-20 relative overflow-hidden">
-    <!-- Decorative Gradient Line -->
-    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+  <footer class="bg-[var(--black)] text-white relative">
+    <div class="absolute top-0 inset-x-0 h-1 bg-[var(--gold)]"></div>
 
     <UContainer>
-      <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Company Info -->
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <Icon name="i-heroicons-speaker-wave" class="w-6 h-6 text-white" />
-            </div>
-            <h3 class="text-lg font-bold" style="font-family: 'Righteous', sans-serif;">
-              Coquies Sound Power
-            </h3>
-          </div>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Servicios profesionales de sonido, iluminación y DJ para hacer de tu evento una experiencia inolvidable.
+      <div class="py-14 grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div class="md:col-span-5">
+          <p class="font-display text-2xl font-extrabold tracking-[-0.02em] text-[var(--gold)]">Coquies Sound Power</p>
+          <p class="mt-4 max-w-sm text-white/75 leading-relaxed">
+            Sonido, luces, DJ y picó para bodas, quinceañeros, cumpleaños y fiestas en Santa Marta.
           </p>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="font-semibold mb-4 text-white">Enlaces Rápidos</h4>
+        <div class="md:col-span-3">
+          <p class="font-semibold mb-4">Páginas</p>
           <ul class="space-y-2">
             <li v-for="link in quickLinks" :key="link.to">
-              <NuxtLink
-                :to="link.to"
-                class="text-slate-400 hover:text-blue-400 transition-colors text-sm cursor-pointer inline-flex items-center gap-2 group"
-              >
-                <span class="w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-3"></span>
+              <NuxtLink :to="link.to" class="text-white/70 hover:text-[var(--gold)] text-sm">
                 {{ link.label }}
               </NuxtLink>
             </li>
           </ul>
         </div>
 
-        <!-- Services -->
-        <div>
-          <h4 class="font-semibold mb-4 text-white">Servicios</h4>
+        <div class="md:col-span-4">
+          <p class="font-semibold mb-4">Servicios</p>
           <ul class="space-y-2">
             <li v-for="service in services" :key="service.to">
-              <NuxtLink
-                :to="service.to"
-                class="text-slate-400 hover:text-blue-400 transition-colors text-sm cursor-pointer inline-flex items-center gap-2 group"
-              >
-                <span class="w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-3"></span>
+              <NuxtLink :to="service.to" class="text-white/70 hover:text-[var(--gold)] text-sm">
                 {{ service.label }}
               </NuxtLink>
             </li>
           </ul>
-        </div>
-
-        <!-- Contact & Social -->
-        <div>
-          <h4 class="font-semibold mb-4 text-white">Contacto</h4>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center gap-2 text-slate-400 text-sm">
-              <Icon name="i-heroicons-phone" class="w-4 h-4 text-blue-400" />
-              <a href="tel:+573001234567" class="hover:text-blue-400 transition-colors">
-                +57 300 123 4567
-              </a>
-            </li>
-            <li class="flex items-center gap-2 text-slate-400 text-sm">
-              <Icon name="i-heroicons-envelope" class="w-4 h-4 text-blue-400" />
-              <a href="mailto:info@coquiessound.com" class="hover:text-blue-400 transition-colors">
-                info@coquiessound.com
-              </a>
-            </li>
-          </ul>
-
-          <h4 class="font-semibold mb-3 text-white">Síguenos</h4>
-          <div class="flex gap-3">
+          <div class="mt-6 space-y-2">
             <a
-              v-for="social in socialLinks"
-              :key="social.name"
-              :href="social.url"
+              :href="social.whatsapp"
+              class="block text-[var(--gold)] font-bold text-lg"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-500/20"
             >
-              <Icon :name="social.icon" class="w-5 h-5" />
+              {{ social.whatsappDisplay }}
             </a>
+            <a
+              :href="`mailto:${social.email}`"
+              class="block text-white/70 text-sm hover:text-[var(--gold)]"
+            >
+              {{ social.email }}
+            </a>
+            <div class="pt-2">
+              <SocialLinks variant="footer" />
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Bottom Bar -->
-      <div class="border-t border-slate-800 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-slate-400 text-sm">
-          © {{ currentYear }} Producciones Coquies Sound Power. Todos los derechos reservados.
-        </p>
-        <div class="flex gap-6">
-          <a href="#" class="text-slate-400 hover:text-blue-400 text-sm transition-colors">
-            Términos y Condiciones
-          </a>
-          <a href="#" class="text-slate-400 hover:text-blue-400 text-sm transition-colors">
-            Política de Privacidad
-          </a>
-        </div>
+      <div class="border-t border-white/10 py-6 text-sm text-white/55">
+        <p>© {{ currentYear }} Producciones Coquies Sound Power. Santa Marta, Magdalena.</p>
       </div>
     </UContainer>
   </footer>
 </template>
 
 <script setup lang="ts">
+import { social } from '@/data/social'
+import SocialLinks from '@/components/SocialLinks.vue'
+
 const currentYear = new Date().getFullYear()
 
 const quickLinks = [
@@ -112,20 +71,19 @@ const quickLinks = [
   { label: 'Nosotros', to: '/nosotros' },
   { label: 'Paquetes', to: '/paquetes' },
   { label: 'Galería', to: '/galeria' },
-  { label: 'Contacto', to: '/contacto' }
+  { label: 'Contacto', to: '/contacto' },
 ]
 
 const services = [
-  { label: 'Alquiler de Equipos', to: '/servicios/alquiler-equipos' },
-  { label: 'Turbo (Picó)', to: '/servicios/turbo-pico' },
+  { label: 'Alquiler de equipos', to: '/servicios/alquiler-equipos' },
+  { label: 'Turbo (picó)', to: '/servicios/turbo-pico' },
   { label: 'Iluminación', to: '/servicios/iluminacion' },
-  { label: 'Servicios de DJ', to: '/servicios/dj' }
-]
-
-const socialLinks = [
-  { name: 'Facebook', icon: 'i-simple-icons-facebook', url: 'https://facebook.com' },
-  { name: 'Instagram', icon: 'i-simple-icons-instagram', url: 'https://instagram.com' },
-  { name: 'WhatsApp', icon: 'i-simple-icons-whatsapp', url: 'https://wa.me/573001234567' },
-  { name: 'TikTok', icon: 'i-simple-icons-tiktok', url: 'https://tiktok.com' }
+  { label: 'DJ', to: '/servicios/dj' },
 ]
 </script>
+
+<style scoped>
+.font-display {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+</style>

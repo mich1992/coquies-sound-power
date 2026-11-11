@@ -1,0 +1,101 @@
+{
+  "photos": [
+    {
+      "file": "01-evento-1.webp",
+      "thumb": "01-evento-1-thumb.webp",
+      "width": 1280,
+      "height": 590
+    },
+    {
+      "file": "02-evento-2.webp",
+      "thumb": "02-evento-2-thumb.webp",
+      "width": 1280,
+      "height": 592
+    },
+    {
+      "file": "03-evento-3.webp",
+      "thumb": "03-evento-3-thumb.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "04-evento-4.webp",
+      "thumb": "04-evento-4-thumb.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "05-evento-5.webp",
+      "thumb": "05-evento-5-thumb.webp",
+      "width": 1280,
+      "height": 592
+    },
+    {
+      "file": "06-evento-6.webp",
+      "thumb": "06-evento-6-thumb.webp",
+      "width": 1280,
+      "height": 592
+    },
+    {
+      "file": "07-evento-7.webp",
+      "thumb": "07-evento-7-thumb.webp",
+      "width": 1280,
+      "height": 592
+    },
+    {
+      "file": "08-evento-8.webp",
+      "thumb": "08-evento-8-thumb.webp",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "file": "09-legacy-2.webp",
+      "thumb": "09-legacy-2-thumb.webp",
+      "width": 1600,
+      "height": 1600
+    },
+    {
+      "file": "10-legacy-3.webp",
+      "thumb": "10-legacy-3-thumb.webp",
+      "width": 1600,
+      "height": 913
+    },
+    {
+      "file": "11-legacy-4.webp",
+      "thumb": "11-legacy-4-thumb.webp",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "file": "12-equipo.webp",
+      "thumb": "12-equipo-thumb.webp",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "file": "13-equipo-alt.webp",
+      "thumb": "13-equipo-alt-thumb.webp",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "file": "14-arte-publicitario.webp",
+      "thumb": "14-arte-publicitario-thumb.webp",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "file": "15-logo-foto.webp",
+      "thumb": "15-logo-foto-thumb.webp",
+      "width": 1600,
+      "height": 1600
+    }
+  ],
+  "videos": [
+    "evento-1.mp4",
+    "evento-2.mp4",
+    "evento-3.mp4",
+    "evento-4.mp4",
+    "evento-5.mp4"
+  ]
+}

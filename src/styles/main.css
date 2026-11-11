@@ -1,27 +1,146 @@
 @import "tailwindcss";
 
+/*
+ * Marca Coquies: negro, amarillo y dorado.
+ * Las rampas "blue" de Tailwind se remapean a dorado/negro para que las vistas
+ * existentes hereden la marca sin reescribir cada clase.
+ */
 @theme {
-  --font-righteous: "Righteous", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-sans: "Hanken Grotesk", sans-serif;
 
-  --color-navy: #0F172A;
-  --color-slate-custom: #334155;
-  --color-blue-cta: #0369A1;
+  --color-blue-50: #fff9e6;
+  --color-blue-100: #fff0b8;
+  --color-blue-200: #ffe47a;
+  --color-blue-300: #ffd84a;
+  --color-blue-400: #ffc61a;
+  --color-blue-500: #e0a800;
+  --color-blue-600: #0a0a0a;
+  --color-blue-700: #1e1e1e;
+  --color-blue-800: #141414;
+  --color-blue-900: #0a0a0a;
+  --color-blue-950: #050505;
+}
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --black: #0a0a0a;
+  --charcoal: #161616;
+  --gold: #ffc61a;
+  --gold-deep: #c99a06;
+  --yellow: #ffd84a;
+  --cream: #fbf7ee;
+  --ink: #0a0a0a;
+  --ink-soft: #4a4a4a;
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--gold) var(--black);
 }
 
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(0);
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+/* Las vistas heredadas traen font-family Righteous en línea: se reemplaza por la voz de marca. */
+[style*="Righteous"] {
+  font-family: var(--font-display) !important;
+}
+
+/* Las páginas internas arrastran el degradado azul antiguo: lo pasamos a negro con brillo dorado. */
+section[class*="from-slate-900"] {
+  background-image: radial-gradient(120% 90% at 85% 0%, rgb(255 198 26 / 14%), transparent 60%) !important;
+  background-color: var(--black) !important;
+  color: #f5efe0 !important;
+  position: relative;
+}
+
+section[class*="from-slate-900"] h1 {
+  color: #ffffff;
+}
+
+section[class*="from-slate-900"] .text-slate-200,
+section[class*="from-slate-900"] .text-slate-300 {
+  color: #d9d2bf !important;
+}
+
+section[class*="from-blue-600"] {
+  background-image: none !important;
+  background-color: var(--charcoal) !important;
+}
+
+/* Titulares de fondo oscuro: subrayado dorado corto para identidad */
+section[class*="from-slate-900"] h1::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 18px auto 0;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.wa-dock {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 4.5rem;
   }
-  50% {
-    transform: translateY(10px);
+
+  .wa-dock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 40;
+    height: 3.25rem;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--black);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 45%);
+  }
+
+  .wa-dock:active {
+    transform: scale(0.98);
   }
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 2s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
