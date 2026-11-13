@@ -60,7 +60,7 @@ const services: Service[] = [
     title: 'Alquiler de Equipos de Sonido',
     description: 'Equipos de audio profesional de última generación para garantizar la mejor calidad de sonido en tu evento.',
     icon: 'i-heroicons-speaker-wave',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop',
+    image: '/media/gallery/14-equipo-parlante-frontal-thumb.webp',
     slug: 'alquiler-equipos',
     features: [
       'Parlantes de alta potencia (1000W - 5000W)',

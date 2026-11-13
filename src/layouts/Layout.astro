@@ -6,7 +6,7 @@ interface Props {
 }
 
 const {
-  title = 'Producciones Coquies Sound Power',
+  title = 'Producciones Coquíes — Coquies Saw Power',
   description = 'Alquiler de equipos de sonido, Turbo, iluminación y servicios de DJ profesionales para tus eventos.',
   ogTitle = title,
 } = Astro.props
@@ -14,18 +14,22 @@ const {
 import '@/styles/main.css'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import MobileActionBar from '@/components/MobileActionBar.vue'
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#edf1f5" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,8 +43,6 @@ import AppFooter from '@/components/AppFooter.vue'
       <slot />
     </main>
     <AppFooter client:idle />
-    <a class="wa-dock" href="https://wa.me/573007348547" target="_blank" rel="noopener noreferrer">
-      Cotizar por WhatsApp
-    </a>
+    <MobileActionBar client:idle />
   </body>
 </html>

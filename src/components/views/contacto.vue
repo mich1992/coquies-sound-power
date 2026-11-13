@@ -26,9 +26,13 @@
           <!-- Contact Info -->
           <div class="space-y-6">
             <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6" style="font-family: 'Righteous', sans-serif;">
+              <h3 class="text-xl font-bold text-slate-900 mb-2" style="font-family: 'Righteous', sans-serif;">
                 Información de Contacto
               </h3>
+              <p class="text-slate-600 text-sm mb-6">
+                <span class="font-semibold text-slate-900">{{ owner.fullName }}</span>
+                · {{ owner.role }}
+              </p>
 
               <div class="space-y-4">
                 <div class="flex items-center gap-4">
@@ -38,9 +42,21 @@
                     </svg>
                   </div>
                   <div>
-                    <p class="font-semibold text-slate-900 text-sm">Teléfono</p>
-                    <a href="tel:+573007348547" class="text-slate-600 hover:text-blue-600 transition-colors">
-                      +57 300 734 8547
+                    <p class="font-semibold text-slate-900 text-sm">Teléfono (propietario)</p>
+                    <a :href="`tel:${owner.phoneE164}`" class="text-slate-600 hover:text-blue-600 transition-colors">
+                      +57 {{ owner.phoneDisplay }}
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-[var(--glacier)]/40 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="i-heroicons-musical-note" class="w-6 h-6 text-[var(--navy)]" />
+                  </div>
+                  <div>
+                    <p class="font-semibold text-slate-900 text-sm">DJ · Jhoan David Granadoz</p>
+                    <a href="tel:+573028501774" class="text-slate-600 hover:text-blue-600 transition-colors">
+                      +57 302 850 1774
                     </a>
                   </div>
                 </div>
@@ -66,10 +82,14 @@
                     </svg>
                   </div>
                   <div>
-                    <p class="font-semibold text-slate-900 text-sm">Email</p>
+                    <p class="font-semibold text-slate-900 text-sm">Email de la empresa</p>
                     <a :href="`mailto:${social.email}`" class="text-slate-600 hover:text-[var(--gold-deep)] transition-colors">
                       {{ social.email }}
                     </a>
+                    <p class="text-slate-500 text-xs mt-1">
+                      Propietario:
+                      <a :href="`mailto:${owner.email}`" class="hover:text-[var(--gold-deep)]">{{ owner.email }}</a>
+                    </p>
                   </div>
                 </div>
 
@@ -197,7 +217,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ContactForm from '@/components/ContactForm.vue'
+import Icon from '@/components/ui/Icon.vue'
 import { social } from '@/data/social'
+import { owner } from '@/data/team'
 import SocialLinks from '@/components/SocialLinks.vue'
 
 const openFaqs = ref<number[]>([])

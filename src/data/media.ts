@@ -39,6 +39,20 @@ export const galleryItems: GalleryItem[] = [
     kind: 'photo',
   },
   {
+    url: '/media/gallery/14-equipo-parlante-frontal.webp',
+    thumb: '/media/gallery/14-equipo-parlante-frontal-thumb.webp',
+    title: 'Parlante PRO DJ — vista frontal',
+    category: 'Equipos',
+    kind: 'photo',
+  },
+  {
+    url: '/media/gallery/15-equipo-parlante-lateral.webp',
+    thumb: '/media/gallery/15-equipo-parlante-lateral-thumb.webp',
+    title: 'Parlante PRO DJ — perfil',
+    category: 'Equipos',
+    kind: 'photo',
+  },
+  {
     url: '/media/gallery/07-evento-7.webp',
     thumb: '/media/gallery/07-evento-7-thumb.webp',
     title: 'Rig de luces y sonido',
@@ -117,4 +131,11 @@ export const galleryItems: GalleryItem[] = [
   },
 ]
 
-export const heroPhoto = '/media/gallery/05-evento-5.webp'
+export const heroPhoto = '/media/gallery/hero-portada.webp'
+
+/** Fotos reales de parlantes (página Alquiler de equipos). */
+export const equipmentPhotos = {
+  hero: '/media/gallery/15-equipo-parlante-lateral.webp',
+  frontal: '/media/gallery/14-equipo-parlante-frontal.webp',
+  lateral: '/media/gallery/15-equipo-parlante-lateral.webp',
+} as const

@@ -12,7 +12,7 @@ Familias y parejas de Santa Marta (Magdalena) y alrededores que están organizan
 
 ## Product Purpose
 
-Producciones Coquies Sound Power alquila sonido profesional, iluminación, DJ y picó (turbo) para eventos sociales. El sitio existe para que el visitante entienda qué servicio le sirve para su tipo de evento y abra una conversación de cotización (WhatsApp o formulario). Éxito = cotizaciones por WhatsApp.
+Producciones Coquíes (Coquies Saw Power) alquila sonido profesional, iluminación, DJ y picó (turbo) para eventos sociales. El sitio existe para que el visitante entienda qué servicio le sirve para su tipo de evento y abra una conversación de cotización (WhatsApp o formulario). Éxito = cotizaciones por WhatsApp.
 
 ## Positioning
 
@@ -33,7 +33,10 @@ Empresa local de Santa Marta que une dos mundos: la producción cuidada que pide
 
 ## Brand Commitments
 
-- Nombre: "Producciones Coquies Sound Power" (corto: "Coquies Sound Power").
+- Nombre legal: "Producciones Coquíes". Nombre comercial / logo: "Coquies Saw Power".
+- Correo empresa (cotizaciones): producionescoquies@gmail.com (`CONTACT_EMAIL`).
+- Propietario: Deudibet Emilio Coquies Galindo (DJ principal). 300 734 8547 · deudibet1@gmail.com (personal).
+- DJ: Jhoan David Granadoz — 302 850 1774.
 - Logo en `public/images/logo.JPEG`.
 
 ## Evidence on Hand

@@ -3,7 +3,7 @@
     <HeroSection />
 
     <!-- Services Section -->
-    <section class="py-20 bg-white relative">
+    <section class="py-20 bg-[var(--polar)] relative">
       <div class="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-slate-900/5 to-transparent"></div>
 
       <UContainer>
@@ -43,14 +43,14 @@
       </UContainer>
     </section>
 
-    <section class="py-16 bg-[var(--black)] text-white">
+    <section class="py-16 bg-[var(--glacier-deep)] text-white">
       <UContainer>
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
             <h2 class="text-3xl font-bold">Así se ven nuestros eventos</h2>
             <p class="text-white/70 mt-2 max-w-xl">Material real de montajes, fiestas y equipos en Santa Marta.</p>
           </div>
-          <UButton to="/galeria" color="blue" variant="soft">Ver galería</UButton>
+          <UButton to="/galeria" color="white" variant="outline">Ver galería</UButton>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <a
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-slate-50">
+    <section class="py-20 bg-[var(--glacier)]/25">
       <UContainer>
         <ScrollReveal>
           <div class="text-center mb-12">
@@ -168,7 +168,7 @@ const services: Service[] = [
     title: 'Turbo (Picó)',
     description: 'Servicio de Turbo o Picó completo con sonido potente y efectos de luces espectaculares.',
     icon: 'i-heroicons-truck',
-    image: '/media/gallery/13-equipo-alt-thumb.webp',
+    image: '/media/gallery/14-equipo-parlante-frontal-thumb.webp',
     slug: 'turbo-pico',
     features: [
       'Sonido de alta potencia',

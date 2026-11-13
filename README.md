@@ -36,7 +36,7 @@ La app corre en http://localhost:3000
 | Variable | Descripción |
 |----------|-------------|
 | `RESEND_API_KEY` | API key de Resend |
-| `CONTACT_EMAIL` | Email que recibe cotizaciones (p. ej. `producionescoquies@gmail.com`) |
+| `CONTACT_EMAIL` | Email de la empresa que recibe cotizaciones (p. ej. `producionescoquies@gmail.com`) |
 
 En Vercel, configura las mismas variables en **Project Settings → Environment Variables**.
 

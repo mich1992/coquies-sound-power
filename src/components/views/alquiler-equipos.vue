@@ -24,11 +24,13 @@
               Solicitar Cotización
             </UButton>
           </div>
-          <div class="rounded-2xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop"
-              alt="Equipos de sonido profesional"
-              class="w-full h-full object-cover"
+          <div class="rounded-2xl overflow-hidden shadow-2xl bg-white p-4 sm:p-6">
+            <img
+              :src="equipmentPhotos.hero"
+              alt="Parlante profesional PRO DJ de Coquies Saw Power"
+              class="w-full max-h-[28rem] object-contain mx-auto"
+              width="337"
+              height="587"
             />
           </div>
         </div>
@@ -84,6 +86,36 @@
       </UContainer>
     </section>
 
+  <section class="py-16 bg-[var(--polar)] border-t border-[var(--glacier)]/40">
+    <UContainer>
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 mb-3 font-display">
+          Equipos que montamos en tu evento
+        </h2>
+        <p class="text-slate-600">
+          Parlantes de alto rendimiento, instalación y soporte técnico en Santa Marta.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <figure
+          v-for="shot in equipmentShots"
+          :key="shot.src"
+          class="rounded-2xl bg-white p-5 shadow-md border border-[var(--glacier)]/35"
+        >
+          <img
+            :src="shot.src"
+            :alt="shot.alt"
+            class="w-full h-64 object-contain"
+            loading="lazy"
+          />
+          <figcaption class="mt-3 text-center text-sm font-semibold text-[var(--navy)]">
+            {{ shot.caption }}
+          </figcaption>
+        </figure>
+      </div>
+    </UContainer>
+  </section>
+
     <!-- CTA Section -->
     <section class="py-20 bg-blue-600 text-white">
       <UContainer>
@@ -122,6 +154,21 @@
 </template>
 
 <script setup lang="ts">
+import { equipmentPhotos } from '@/data/media'
+
+const equipmentShots = [
+  {
+    src: equipmentPhotos.frontal,
+    alt: 'Parlante PRO DJ vista frontal',
+    caption: 'Parlante full range — vista frontal',
+  },
+  {
+    src: equipmentPhotos.lateral,
+    alt: 'Parlante PRO DJ vista lateral',
+    caption: 'Parlante full range — perfil',
+  },
+]
+
 const equipment = [
   {
     title: 'Parlantes de Alta Potencia',

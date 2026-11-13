@@ -67,7 +67,7 @@ export const POST: APIRoute = async ({ request }) => {
     })
 
     const { data, error } = await resend.emails.send({
-      from: 'Coquies Sound Power <onboarding@resend.dev>',
+      from: 'Coquies Saw Power <onboarding@resend.dev>',
       to: [contactEmail],
       replyTo: body.email,
       subject: `Nueva Solicitud de Cotización - ${body.name}`,
@@ -91,7 +91,7 @@ export const POST: APIRoute = async ({ request }) => {
           <div class="container">
             <div class="header">
               <h1 style="margin: 0;">Nueva Solicitud de Cotización</h1>
-              <p style="margin: 10px 0 0 0;">Coquies Sound Power</p>
+              <p style="margin: 10px 0 0 0;">Coquies Saw Power · Producciones Coquíes</p>
             </div>
             
             <div class="content">
@@ -137,7 +137,7 @@ export const POST: APIRoute = async ({ request }) => {
               }
 
               <div class="footer">
-                <p>Esta solicitud fue enviada desde el formulario de contacto de Coquies Sound Power.</p>
+                <p>Esta solicitud fue enviada desde el formulario de contacto de Producciones Coquíes.</p>
               </div>
             </div>
           </div>

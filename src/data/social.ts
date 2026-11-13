@@ -1,6 +1,7 @@
 export const social = {
   whatsapp: 'https://wa.me/573007348547',
   whatsappDisplay: '300 734 8547',
+  /** Correo de la empresa (formulario y cotizaciones) */
   email: 'producionescoquies@gmail.com',
   tiktok: 'https://www.tiktok.com/@producionescoquies',
   facebook: 'https://www.facebook.com/profile.php?id=61596227439990',
@@ -10,7 +11,7 @@ export const social = {
 export const socialLinks = [
   {
     id: 'facebook',
-    label: 'Facebook Produciones Coquies',
+    label: 'Facebook Producciones Coquíes',
     short: 'Facebook',
     href: social.facebook,
     icon: 'i-simple-icons-facebook',

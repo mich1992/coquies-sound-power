@@ -1,58 +1,67 @@
 @import "tailwindcss";
 
 /*
- * Marca Coquies: negro, amarillo y dorado.
- * Las rampas "blue" de Tailwind se remapean a dorado/negro para que las vistas
- * existentes hereden la marca sin reescribir cada clase.
+ * Marca Coquies — línea festiva y fresca (60-30-10).
+ * Blanco Polar · Azul Glaciar · Rojo Racing #E4002B
  */
 @theme {
   --font-display: "Bricolage Grotesque", sans-serif;
   --font-sans: "Hanken Grotesk", sans-serif;
 
-  --color-blue-50: #fff9e6;
-  --color-blue-100: #fff0b8;
-  --color-blue-200: #ffe47a;
-  --color-blue-300: #ffd84a;
-  --color-blue-400: #ffc61a;
-  --color-blue-500: #e0a800;
-  --color-blue-600: #0a0a0a;
-  --color-blue-700: #1e1e1e;
-  --color-blue-800: #141414;
-  --color-blue-900: #0a0a0a;
-  --color-blue-950: #050505;
+  --color-blue-50: #f4f7fa;
+  --color-blue-100: #e4ecf3;
+  --color-blue-200: #c8d9e8;
+  --color-blue-300: #a8c3da;
+  --color-blue-400: #89acc9;
+  --color-blue-500: #6f96b5;
+  --color-blue-600: #e4002b;
+  --color-blue-700: #1a3550;
+  --color-blue-800: #132a42;
+  --color-blue-900: #0f2236;
+  --color-blue-950: #0a1726;
 }
 
 :root {
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --black: #0a0a0a;
-  --charcoal: #161616;
-  --gold: #ffc61a;
-  --gold-deep: #c99a06;
-  --yellow: #ffd84a;
-  --cream: #fbf7ee;
-  --ink: #0a0a0a;
-  --ink-soft: #4a4a4a;
+
+  --polar: #edf1f5;
+  --glacier: #95b4cb;
+  --glacier-deep: #6f93b0;
+  --glacier-muted: #b8ccd9;
+  --racing: #e4002b;
+  --racing-hover: #c40024;
+  --navy: #0f2a44;
+
+  /* Alias heredados (vistas y componentes existentes) */
+  --cream: var(--polar);
+  --gold: var(--racing);
+  --gold-deep: var(--racing-hover);
+  --yellow: var(--racing-hover);
+  --black: var(--navy);
+  --charcoal: #1a3d5c;
+  --ink: var(--navy);
+  --ink-soft: #4a6278;
 }
 
 html {
   scroll-behavior: smooth;
-  scrollbar-color: var(--gold) var(--black);
+  scrollbar-color: var(--racing) var(--glacier-deep);
 }
 
 body {
-  background: var(--cream);
+  background: var(--polar);
   color: var(--ink);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--racing);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold-deep);
+  outline: 2px solid var(--racing);
   outline-offset: 3px;
 }
 
@@ -61,16 +70,19 @@ h1, h2, h3, h4 {
   letter-spacing: -0.03em;
 }
 
-/* Las vistas heredadas traen font-family Righteous en línea: se reemplaza por la voz de marca. */
 [style*="Righteous"] {
   font-family: var(--font-display) !important;
 }
 
-/* Las páginas internas arrastran el degradado azul antiguo: lo pasamos a negro con brillo dorado. */
+/* Heroes internos: azul glaciar con brillo rojo suave */
 section[class*="from-slate-900"] {
-  background-image: radial-gradient(120% 90% at 85% 0%, rgb(255 198 26 / 14%), transparent 60%) !important;
-  background-color: var(--black) !important;
-  color: #f5efe0 !important;
+  background-image: radial-gradient(
+    120% 90% at 85% 0%,
+    rgb(228 0 43 / 12%),
+    transparent 58%
+  ) !important;
+  background-color: var(--glacier-deep) !important;
+  color: #f0f5fa !important;
   position: relative;
 }
 
@@ -80,7 +92,7 @@ section[class*="from-slate-900"] h1 {
 
 section[class*="from-slate-900"] .text-slate-200,
 section[class*="from-slate-900"] .text-slate-300 {
-  color: #d9d2bf !important;
+  color: #e2eaf2 !important;
 }
 
 section[class*="from-blue-600"] {
@@ -88,46 +100,73 @@ section[class*="from-blue-600"] {
   background-color: var(--charcoal) !important;
 }
 
-/* Titulares de fondo oscuro: subrayado dorado corto para identidad */
 section[class*="from-slate-900"] h1::after {
   content: "";
   display: block;
   width: 56px;
   height: 4px;
   margin: 18px auto 0;
-  background: var(--gold);
+  background: var(--racing);
   border-radius: 2px;
 }
 
-.wa-dock {
+.mobile-dock {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   body {
-    padding-bottom: 4.5rem;
+    padding-bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
   }
 
-  .wa-dock {
-    display: flex;
+  footer {
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  main {
+    /* Evita que el contenido quede tapado por la barra fija */
+    scroll-margin-bottom: 4rem;
+  }
+
+  .mobile-dock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    border-top: 1px solid rgb(255 255 255 / 12%);
+    box-shadow: 0 -8px 32px rgb(15 42 68 / 22%);
+  }
+
+  .mobile-dock__btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    z-index: 40;
-    height: 3.25rem;
-    border-radius: 999px;
-    background: var(--gold);
-    color: var(--black);
+    gap: 0.5rem;
+    min-height: 3.5rem;
     font-weight: 700;
+    font-size: 0.95rem;
     text-decoration: none;
-    box-shadow: 0 12px 28px rgb(0 0 0 / 45%);
+    -webkit-tap-highlight-color: transparent;
+    transition: filter 140ms ease, transform 100ms ease;
   }
 
-  .wa-dock:active {
-    transform: scale(0.98);
+  .mobile-dock__btn:active {
+    transform: scale(0.99);
+    filter: brightness(0.94);
+  }
+
+  .mobile-dock__btn--call {
+    background: var(--navy);
+    color: #ffffff;
+  }
+
+  .mobile-dock__btn--wa {
+    background: var(--racing);
+    color: #ffffff;
   }
 }
 

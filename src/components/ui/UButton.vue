@@ -46,22 +46,24 @@ const sizeClasses: Record<string, string> = {
 
 const colorClasses: Record<string, Record<string, string>> = {
   blue: {
-    solid: 'bg-[var(--gold)] text-[var(--black)] hover:bg-[var(--yellow)]',
-    soft: 'bg-[var(--black)]/5 text-[var(--black)] hover:bg-[var(--black)]/10',
-    ghost: 'text-[var(--black)] hover:bg-[var(--gold)]/20',
-    outline: 'border-2 border-[var(--black)] text-[var(--black)] bg-transparent hover:bg-[var(--black)] hover:text-[var(--gold)]',
+    solid: 'bg-[var(--gold)] text-white hover:bg-[var(--yellow)] shadow-sm shadow-[var(--gold)]/25',
+    soft: 'bg-[var(--glacier)]/35 text-[var(--black)] hover:bg-[var(--glacier)]/55',
+    ghost: 'text-[var(--black)] hover:bg-[var(--glacier)]/25',
+    outline:
+      'border-2 border-[var(--gold)] text-[var(--gold)] bg-transparent hover:bg-[var(--gold)] hover:text-white',
   },
   gray: {
-    solid: 'bg-[var(--black)] text-[var(--gold)] hover:bg-[var(--charcoal)]',
+    solid: 'bg-[var(--charcoal)] text-white hover:bg-[var(--black)]',
     soft: 'bg-white/10 text-inherit hover:bg-white/20',
     ghost: 'text-inherit hover:bg-white/10',
     outline: 'border-2 border-current bg-transparent hover:bg-white/10',
   },
   white: {
-    solid: 'bg-white text-[var(--black)] hover:bg-[var(--cream)]',
-    soft: 'bg-white/15 text-inherit hover:bg-white/25',
-    ghost: 'text-inherit hover:bg-white/10',
-    outline: 'border-2 border-current bg-transparent hover:bg-white/10',
+    solid: 'bg-white text-[var(--navy)] hover:bg-[var(--polar)] shadow-md shadow-black/20',
+    soft: 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm',
+    ghost: 'text-white hover:bg-white/15',
+    outline:
+      'border-2 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-[var(--navy)]',
   },
 }
 

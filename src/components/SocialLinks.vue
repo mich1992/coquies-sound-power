@@ -1,5 +1,5 @@
 <template>
-  <div :class="variant === 'footer' ? 'flex gap-2' : 'flex flex-wrap gap-3'">
+  <div :class="variant === 'footer' ? 'flex flex-wrap gap-3' : 'flex flex-wrap gap-3'">
     <a
       v-for="link in socialLinks"
       :key="link.id"
@@ -29,12 +29,13 @@ const baseClass =
   'inline-flex items-center justify-center gap-2 transition-transform duration-150 ease-out active:scale-[0.97]'
 
 const footerClass = (id: SocialId) => {
+  const tile =
+    'h-11 w-11 rounded-full text-white shadow-md shadow-black/25 ring-2 ring-white/20 hover:brightness-110 hover:ring-white/40'
   const map: Record<SocialId, string> = {
-    facebook: 'h-10 w-10 rounded-full bg-[#1877F2] text-white hover:brightness-110',
-    instagram:
-      'h-10 w-10 rounded-full bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white hover:brightness-110',
-    tiktok: 'h-10 w-10 rounded-full bg-black text-white ring-1 ring-white/25 hover:ring-white/50',
-    whatsapp: 'h-10 w-10 rounded-full bg-[#25D366] text-white hover:brightness-110',
+    facebook: `${tile} bg-[#1877F2]`,
+    instagram: `${tile} bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]`,
+    tiktok: `${tile} bg-[#0f2236]`,
+    whatsapp: `${tile} bg-[#128C7E]`,
   }
   return map[id]
 }

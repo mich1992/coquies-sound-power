@@ -4,10 +4,12 @@
     <div class="absolute inset-0">
       <img
         :src="heroImage"
-        alt="Evento profesional"
+        alt="Montaje de sonido, luces y cabina DJ de Coquies Saw Power"
         class="w-full h-full object-cover"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/35"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/92 via-[var(--glacier-deep)]/55 to-[var(--glacier)]/25"
+      ></div>
     </div>
 
     <!-- Content -->
@@ -21,7 +23,7 @@
           class="mb-6 inline-flex"
         >
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/25 backdrop-blur-md shadow-lg">
-            <Icon name="i-heroicons-star" class="w-4 h-4 text-yellow-300" />
+            <Icon name="i-heroicons-star" class="w-4 h-4 text-[var(--gold)]" />
             <span class="text-sm font-semibold text-white">Más de 10 años de experiencia</span>
           </div>
         </div>
@@ -68,7 +70,7 @@
             size="xl"
             color="white"
             variant="outline"
-            class="cursor-pointer px-8"
+            class="cursor-pointer px-8 hero-cta-secondary"
           >
             <Icon name="i-heroicons-sparkles" class="w-5 h-5 mr-2" />
             Ver Servicios
@@ -115,3 +117,10 @@ const stats = [
   { value: 24, suffix: '/7', label: 'Soporte Disponible' }
 ]
 </script>
+
+<style scoped>
+.hero-cta-secondary {
+  border-width: 2px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+}
+</style>

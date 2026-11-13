@@ -5,7 +5,7 @@
         <div class="max-w-3xl mx-auto text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6">Galería de eventos</h1>
           <p class="text-xl text-slate-200">
-            Fotos y videos reales de Coquies Sound Power en Santa Marta.
+            Fotos y videos reales de Coquies Saw Power en Santa Marta.
           </p>
         </div>
       </UContainer>
@@ -49,7 +49,7 @@
                 loading="lazy"
               />
               <div class="absolute inset-0 grid place-items-center">
-                <span class="h-14 w-14 rounded-full bg-[var(--gold)] text-[var(--black)] font-bold grid place-items-center">▶</span>
+                <span class="h-14 w-14 rounded-full bg-[var(--gold)] text-white font-bold grid place-items-center">▶</span>
               </div>
             </template>
             <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/85 to-transparent">

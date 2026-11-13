@@ -23,9 +23,9 @@
               Nuestra Historia
             </h2>
             <p class="text-slate-700 mb-6">
-              Producciones Coquies Sound Power nació en 2013 de la pasión por la música y el compromiso de hacer de cada evento 
-              una experiencia memorable. Lo que comenzó como un pequeño emprendimiento con equipos básicos, hoy es una de las 
-              empresas líderes en servicios de sonido, iluminación y entretenimiento en la región.
+              Producciones Coquíes (Coquies Saw Power) nació en 2013 de la pasión por la música y el compromiso de hacer de cada evento
+              una experiencia memorable. Hoy dirige el proyecto <strong>{{ owner.fullName }}</strong> desde Santa Marta, con sonido, picó,
+              iluminación y DJs que la gente ya conoce en la ciudad.
             </p>
             <p class="text-slate-700 mb-8">
               A lo largo de estos años, hemos tenido el honor de participar en más de 500 eventos, desde bodas íntimas hasta 
@@ -74,9 +74,9 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <TeamMemberCard 
-            v-for="member in team" 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <TeamMemberCard
+            v-for="member in team"
             :key="member.id"
             :member="member"
           />
@@ -125,8 +125,8 @@
 </template>
 
 <script setup lang="ts">
-import type { TeamMember } from '@/types'
 import TeamMemberCard from '@/components/TeamMemberCard.vue'
+import { owner, teamMembers } from '@/data/team'
 
 const values = [
   {
@@ -151,36 +151,7 @@ const values = [
   }
 ]
 
-const team: TeamMember[] = [
-  {
-    id: 1,
-    name: 'Carlos Ramírez',
-    role: 'Director General',
-    bio: 'Fundador con 15 años de experiencia en producción de eventos.',
-    image: 'https://i.pravatar.cc/200?img=12'
-  },
-  {
-    id: 2,
-    name: 'Laura Martínez',
-    role: 'Coordinadora de Eventos',
-    bio: 'Especialista en planificación y logística de eventos corporativos.',
-    image: 'https://i.pravatar.cc/200?img=5'
-  },
-  {
-    id: 3,
-    name: 'Miguel Torres',
-    role: 'Ingeniero de Sonido',
-    bio: 'Experto en sistemas de audio y acústica de espacios.',
-    image: 'https://i.pravatar.cc/200?img=13'
-  },
-  {
-    id: 4,
-    name: 'Andrea Silva',
-    role: 'DJ & Animadora',
-    bio: 'DJ profesional con 8 años amenizando eventos de todo tipo.',
-    image: 'https://i.pravatar.cc/200?img=9'
-  }
-]
+const team = teamMembers
 
 const stats = [
   { value: '10+', label: 'Años de Experiencia' },

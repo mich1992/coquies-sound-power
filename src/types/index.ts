@@ -22,7 +22,10 @@ export interface TeamMember {
   name: string
   role: string
   bio: string
-  image: string
+  image?: string
+  phone?: string
+  phoneDisplay?: string
+  email?: string
 }
 
 export interface PricingPackage {

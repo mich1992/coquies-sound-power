@@ -16,16 +16,30 @@ const size = computed(() => {
   return match ? `${Number(match[1]) * 4}px` : '1.25rem'
 })
 
+const COLLECTION_PREFIXES = [
+  'simple-icons',
+  'heroicons-solid',
+  'heroicons-outline',
+  'heroicons',
+  'mdi',
+  'lucide',
+  'tabler',
+] as const
+
 function resolveIcon(name: string): string {
-  if (name.startsWith('i-')) {
-    const rest = name.slice(2)
-    const dash = rest.indexOf('-')
-    if (dash === -1) return rest
-    const collection = rest.slice(0, dash)
-    const iconName = rest.slice(dash + 1)
-    return `${collection}:${iconName}`
+  if (!name.startsWith('i-')) return name
+
+  const rest = name.slice(2)
+  for (const prefix of COLLECTION_PREFIXES) {
+    if (rest === prefix) return prefix
+    if (rest.startsWith(`${prefix}-`)) {
+      return `${prefix}:${rest.slice(prefix.length + 1)}`
+    }
   }
-  return name
+
+  const dash = rest.indexOf('-')
+  if (dash === -1) return rest
+  return `${rest.slice(0, dash)}:${rest.slice(dash + 1)}`
 }
 
 const resolvedIcon = computed(() => resolveIcon(props.name))

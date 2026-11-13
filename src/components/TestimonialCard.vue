@@ -13,7 +13,7 @@
             :key="star"
             name="i-heroicons-star-solid"
             class="w-5 h-5"
-            :class="star <= testimonial.rating ? 'text-yellow-400' : 'text-gray-200'"
+            :class="star <= testimonial.rating ? 'text-[var(--gold)]' : 'text-gray-200'"
           />
         </div>
 
