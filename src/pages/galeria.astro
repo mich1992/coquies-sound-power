@@ -1,4 +1,6 @@
 ---
+export const prerender = true
+
 import Layout from '@/layouts/Layout.astro'
 import GaleriaPage from '@/components/views/galeria.vue'
 ---
@@ -8,5 +10,5 @@ import GaleriaPage from '@/components/views/galeria.vue'
   description="Mira nuestros trabajos: bodas, XV años, fiestas corporativas y más eventos realizados con éxito."
   ogTitle="Galería de Eventos"
 >
-  <GaleriaPage client:load />
+  <GaleriaPage client:idle />
 </Layout>

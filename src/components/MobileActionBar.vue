@@ -20,6 +20,12 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import Icon from '@/components/ui/Icon.vue'
+import { ensureSocialIcons } from '@/lib/iconify-social'
 import { social } from '@/data/social'
+
+onMounted(() => {
+  void ensureSocialIcons()
+})
 </script>

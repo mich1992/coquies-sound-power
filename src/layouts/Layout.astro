@@ -30,15 +30,9 @@ import MobileActionBar from '@/components/MobileActionBar.vue'
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#edf1f5" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body class="min-h-screen bg-[var(--cream)] text-[var(--black)] font-sans antialiased">
-    <AppHeader client:load />
+    <AppHeader client:idle />
     <main>
       <slot />
     </main>

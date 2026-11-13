@@ -1,4 +1,6 @@
 ---
+export const prerender = true
+
 import Layout from '@/layouts/Layout.astro'
 import HomePage from '@/components/views/HomePage.vue'
 ---
@@ -8,5 +10,5 @@ import HomePage from '@/components/views/HomePage.vue'
   description="Alquiler de equipos de sonido profesional, Turbo (Picó), iluminación LED y servicios de DJ para bodas, XV años, fiestas y eventos corporativos."
   ogTitle="Producciones Coquíes — Coquies Saw Power"
 >
-  <HomePage client:load />
+  <HomePage client:idle />
 </Layout>

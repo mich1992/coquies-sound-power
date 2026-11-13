@@ -16,7 +16,13 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { ensureSocialIcons } from '@/lib/iconify-social'
 import { socialLinks, type SocialId } from '@/data/social'
+
+onMounted(() => {
+  void ensureSocialIcons()
+})
 
 withDefaults(
   defineProps<{

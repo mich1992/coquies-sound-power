@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Fuentes locales (sin Google Fonts bloqueando el render) */
+@import "@fontsource/hanken-grotesk/latin-400.css";
+@import "@fontsource/hanken-grotesk/latin-600.css";
+@import "@fontsource/hanken-grotesk/latin-700.css";
+@import "@fontsource/bricolage-grotesque/latin-600.css";
+@import "@fontsource/bricolage-grotesque/latin-700.css";
+@import "@fontsource/bricolage-grotesque/latin-800.css";
+
 /*
  * Marca Coquies — línea festiva y fresca (60-30-10).
  * Blanco Polar · Azul Glaciar · Rojo Racing #E4002B

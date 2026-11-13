@@ -9,6 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   output: 'server',
+  compressHTML: true,
   adapter: vercel(),
   server: {
     port: 3000,
