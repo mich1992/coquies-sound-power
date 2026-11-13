@@ -168,7 +168,7 @@ const services: Service[] = [
     title: 'Turbo (Picó)',
     description: 'Servicio de Turbo o Picó completo con sonido potente y efectos de luces espectaculares.',
     icon: 'i-heroicons-truck',
-    image: '/media/gallery/14-equipo-parlante-frontal-thumb.webp',
+    image: '/media/gallery/16-turbo-coquies-thumb.webp',
     slug: 'turbo-pico',
     features: [
       'Sonido de alta potencia',

@@ -146,7 +146,7 @@ const navigation = [
   padding: 0 1.1rem;
   border-radius: 999px;
   background: var(--gold);
-  color: #ffffff;
+  color: var(--navy);
   font-weight: 700;
   font-size: 0.95rem;
   align-items: center;
@@ -154,7 +154,8 @@ const navigation = [
 }
 
 .cq-wa:hover {
-  background: var(--yellow);
+  background: var(--gold-deep);
+  color: var(--navy);
 }
 
 .cq-wa:active {
@@ -165,9 +166,9 @@ const navigation = [
   height: 2.5rem;
   padding: 0 0.85rem;
   border-radius: 999px;
-  border: 2px solid var(--gold);
+  border: 2px solid var(--gold-deep);
   color: var(--navy);
-  background: #ffffff;
+  background: var(--festive-muted);
   font-weight: 700;
   font-size: 0.85rem;
   line-height: 1;
@@ -179,6 +180,6 @@ const navigation = [
 }
 
 .cq-call-mobile:active {
-  background: rgb(228 0 43 / 8%);
+  background: rgb(255 224 71 / 25%);
 }
 </style>

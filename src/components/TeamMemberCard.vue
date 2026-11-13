@@ -22,7 +22,7 @@
       {{ member.name }}
     </h3>
 
-    <p class="text-[var(--gold)] font-semibold mb-3">
+    <p class="text-[var(--gold-deep)] font-semibold mb-3">
       {{ member.role }}
     </p>
 

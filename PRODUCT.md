@@ -34,6 +34,7 @@ Empresa local de Santa Marta que une dos mundos: la producción cuidada que pide
 ## Brand Commitments
 
 - Nombre legal: "Producciones Coquíes". Nombre comercial / logo: "Coquies Saw Power".
+- Paleta: polar 60% · glaciar 30% · amarillo sol 10% (complementario al azul; accesible).
 - Correo empresa (cotizaciones): producionescoquies@gmail.com (`CONTACT_EMAIL`).
 - Propietario: Deudibet Emilio Coquies Galindo (DJ principal). 300 734 8547 · deudibet1@gmail.com (personal).
 - DJ: Jhoan David Granadoz — 302 850 1774.

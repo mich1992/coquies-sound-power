@@ -46,11 +46,12 @@ const sizeClasses: Record<string, string> = {
 
 const colorClasses: Record<string, Record<string, string>> = {
   blue: {
-    solid: 'bg-[var(--gold)] text-white hover:bg-[var(--yellow)] shadow-sm shadow-[var(--gold)]/25',
-    soft: 'bg-[var(--glacier)]/35 text-[var(--black)] hover:bg-[var(--glacier)]/55',
-    ghost: 'text-[var(--black)] hover:bg-[var(--glacier)]/25',
+    solid:
+      'bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-deep)] hover:text-[var(--navy)] shadow-sm shadow-[var(--gold-deep)]/25',
+    soft: 'bg-[var(--festive-muted)] text-[var(--navy)] hover:bg-[var(--festive)]/35',
+    ghost: 'text-[var(--navy)] hover:bg-[var(--festive-muted)]',
     outline:
-      'border-2 border-[var(--gold)] text-[var(--gold)] bg-transparent hover:bg-[var(--gold)] hover:text-white',
+      'border-2 border-[var(--gold-deep)] text-[var(--navy)] bg-transparent hover:bg-[var(--gold)]',
   },
   gray: {
     solid: 'bg-[var(--charcoal)] text-white hover:bg-[var(--black)]',

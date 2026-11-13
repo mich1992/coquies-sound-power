@@ -39,6 +39,13 @@ export const galleryItems: GalleryItem[] = [
     kind: 'photo',
   },
   {
+    url: '/media/gallery/16-turbo-coquies.webp',
+    thumb: '/media/gallery/16-turbo-coquies-thumb.webp',
+    title: 'Turbo Coquies en vivo',
+    category: 'Equipos',
+    kind: 'photo',
+  },
+  {
     url: '/media/gallery/14-equipo-parlante-frontal.webp',
     thumb: '/media/gallery/14-equipo-parlante-frontal-thumb.webp',
     title: 'Parlante PRO DJ — vista frontal',
@@ -139,3 +146,7 @@ export const equipmentPhotos = {
   frontal: '/media/gallery/14-equipo-parlante-frontal.webp',
   lateral: '/media/gallery/15-equipo-parlante-lateral.webp',
 } as const
+
+/** Picó / turbo Coquies (página Turbo y tarjetas de servicio). */
+export const turboPhoto = '/media/gallery/16-turbo-coquies.webp'
+export const turboPhotoThumb = '/media/gallery/16-turbo-coquies-thumb.webp'

@@ -53,7 +53,7 @@ const contactClass = (id: SocialId) => {
     instagram:
       'rounded-full border border-[#ee2a7b]/35 bg-[#ee2a7b]/10 px-4 py-2 text-[#c13584] hover:bg-[#ee2a7b]/15',
     tiktok:
-      'rounded-full border border-black/20 bg-black/5 px-4 py-2 text-black hover:bg-black/10',
+      'rounded-full border border-[var(--navy)]/25 bg-[var(--navy)]/8 px-4 py-2 text-[var(--navy)] hover:bg-[var(--navy)]/12',
     whatsapp:
       'rounded-full border border-[#25D366]/35 bg-[#25D366]/10 px-4 py-2 text-[#128C7E] hover:bg-[#25D366]/15',
   }

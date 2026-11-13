@@ -49,7 +49,7 @@
                 loading="lazy"
               />
               <div class="absolute inset-0 grid place-items-center">
-                <span class="h-14 w-14 rounded-full bg-[var(--gold)] text-white font-bold grid place-items-center">▶</span>
+                <span class="h-14 w-14 rounded-full bg-[var(--gold)] text-[var(--navy)] font-bold grid place-items-center">▶</span>
               </div>
             </template>
             <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/85 to-transparent">

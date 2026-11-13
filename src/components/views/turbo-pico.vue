@@ -24,11 +24,15 @@
               Solicitar Cotización
             </UButton>
           </div>
-          <div class="rounded-2xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=600&fit=crop"
-              alt="Turbo Picó"
-              class="w-full h-full object-cover"
+          <div class="rounded-2xl overflow-hidden shadow-2xl bg-[var(--navy)] p-3 sm:p-4">
+            <img
+              :src="turboPhoto"
+              alt="Turbo Coquies Saw Power con luces en evento nocturno"
+              class="w-full max-h-[28rem] object-contain mx-auto rounded-lg"
+              width="1200"
+              height="1385"
+              loading="eager"
+              decoding="async"
             />
           </div>
         </div>
@@ -105,6 +109,8 @@
 </template>
 
 <script setup lang="ts">
+import { turboPhoto } from '@/data/media'
+
 const features = [
   {
     title: 'Sonido de Ultra Potencia',

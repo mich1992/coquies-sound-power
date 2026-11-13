@@ -9,8 +9,8 @@
 @import "@fontsource/bricolage-grotesque/latin-800.css";
 
 /*
- * Marca Coquies — línea festiva y fresca (60-30-10).
- * Blanco Polar · Azul Glaciar · Rojo Racing #E4002B
+ * Marca Coquies — 60-30-10 con rueda de color.
+ * Blanco Polar · Azul Glaciar (frío) · Amarillo sol (complementario, acento ~10%).
  */
 @theme {
   --font-display: "Bricolage Grotesque", sans-serif;
@@ -22,7 +22,7 @@
   --color-blue-300: #a8c3da;
   --color-blue-400: #89acc9;
   --color-blue-500: #6f96b5;
-  --color-blue-600: #e4002b;
+  --color-blue-600: #dbb800;
   --color-blue-700: #1a3550;
   --color-blue-800: #132a42;
   --color-blue-900: #0f2236;
@@ -36,15 +36,20 @@
   --glacier: #95b4cb;
   --glacier-deep: #6f93b0;
   --glacier-muted: #b8ccd9;
-  --racing: #e4002b;
-  --racing-hover: #c40024;
+  /* Gama amarillos — complementario al azul glaciar */
+  --festive: #ffeb52;
+  --festive-deep: #dbb800;
+  --festive-hover: #b89600;
+  --festive-muted: #fffbe3;
   --navy: #0f2a44;
 
   /* Alias heredados (vistas y componentes existentes) */
   --cream: var(--polar);
-  --gold: var(--racing);
-  --gold-deep: var(--racing-hover);
-  --yellow: var(--racing-hover);
+  --gold: var(--festive);
+  --gold-deep: var(--festive-deep);
+  --yellow: var(--festive-hover);
+  --racing: var(--festive-deep);
+  --racing-hover: var(--festive-hover);
   --black: var(--navy);
   --charcoal: #1a3d5c;
   --ink: var(--navy);
@@ -53,7 +58,7 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-color: var(--racing) var(--glacier-deep);
+  scrollbar-color: var(--festive-deep) var(--glacier-deep);
 }
 
 body {
@@ -64,12 +69,12 @@ body {
 }
 
 ::selection {
-  background: var(--racing);
+  background: var(--festive-deep);
   color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--racing);
+  outline: 2px solid var(--festive-deep);
   outline-offset: 3px;
 }
 
@@ -82,11 +87,11 @@ h1, h2, h3, h4 {
   font-family: var(--font-display) !important;
 }
 
-/* Heroes internos: azul glaciar con brillo rojo suave */
+/* Heroes internos: azul glaciar con brillo dorado suave */
 section[class*="from-slate-900"] {
   background-image: radial-gradient(
     120% 90% at 85% 0%,
-    rgb(228 0 43 / 12%),
+    rgb(255 235 82 / 14%),
     transparent 58%
   ) !important;
   background-color: var(--glacier-deep) !important;
@@ -114,7 +119,7 @@ section[class*="from-slate-900"] h1::after {
   width: 56px;
   height: 4px;
   margin: 18px auto 0;
-  background: var(--racing);
+  background: var(--festive);
   border-radius: 2px;
 }
 
@@ -173,7 +178,7 @@ section[class*="from-slate-900"] h1::after {
   }
 
   .mobile-dock__btn--wa {
-    background: var(--racing);
+    background: #128c7e;
     color: #ffffff;
   }
 }

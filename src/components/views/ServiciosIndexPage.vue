@@ -75,7 +75,7 @@ const services: Service[] = [
     title: 'Turbo (Pickup o Picó)',
     description: 'El sistema de sonido móvil más potente y espectacular para fiestas y eventos al aire libre.',
     icon: 'i-heroicons-truck',
-    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=600&fit=crop',
+    image: '/media/gallery/16-turbo-coquies-thumb.webp',
     slug: 'turbo-pico',
     features: [
       'Sistema de sonido de ultra alta potencia',

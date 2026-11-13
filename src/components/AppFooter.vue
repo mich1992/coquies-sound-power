@@ -15,7 +15,7 @@
           <p class="font-display text-2xl font-extrabold tracking-[-0.02em] text-white mt-4">
             {{ brand.short }}
           </p>
-          <p class="mt-1 text-sm font-medium text-white/70">{{ brand.legal }}</p>
+          <p class="mt-1 text-sm font-medium text-white/85">{{ brand.legal }}</p>
           <p class="mt-3 max-w-sm mx-auto md:mx-0 text-white/88 leading-relaxed text-[15px]">
             Sonido, luces, DJ y picó para bodas, quinceañeros, cumpleaños y fiestas en Santa Marta.
           </p>
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <div class="border-t border-white/15 py-6 text-sm text-white/75 text-center md:text-left">
+      <div class="border-t border-white/15 py-6 text-sm text-white/88 text-center md:text-left">
         <p>© {{ currentYear }} {{ brand.legal }}. Santa Marta, Magdalena.</p>
       </div>
     </UContainer>
@@ -114,7 +114,7 @@ const services = [
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--festive);
 }
 
 .footer-link {

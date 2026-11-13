@@ -20,7 +20,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-4 left-4">
             <div class="w-12 h-12 bg-[var(--gold)] rounded-xl flex items-center justify-center">
-              <Icon :name="service.icon" class="w-6 h-6 text-white" />
+              <Icon :name="service.icon" class="w-6 h-6 text-[var(--navy)]" />
             </div>
           </div>
         </div>
