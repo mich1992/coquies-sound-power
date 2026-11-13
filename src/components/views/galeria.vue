@@ -5,7 +5,7 @@
         <div class="max-w-3xl mx-auto text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6">Galería de eventos</h1>
           <p class="text-xl text-slate-200">
-            Fotos y videos reales de Coquies Saw Power en Santa Marta.
+            Cabinas profesionales, montajes de sonido, picó y fiestas en Santa Marta.
           </p>
         </div>
       </UContainer>

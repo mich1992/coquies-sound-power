@@ -7,7 +7,8 @@
     "dev": "astro dev --port 3000",
     "build": "astro build",
     "preview": "astro preview --port 3000",
-    "media:prepare": "node scripts/prepare-media.mjs"
+    "media:prepare": "node scripts/prepare-media.mjs",
+    "media:hero-boomerang": "node scripts/prepare-hero-boomerang.mjs"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -29,5 +30,8 @@
     "astro": "^7.4.8",
     "resend": "^4.0.1",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.3.0"
   }
 }

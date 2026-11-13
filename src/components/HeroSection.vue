@@ -5,8 +5,8 @@
         :src="heroImage"
         alt="Montaje de sonido, luces y cabina DJ de Coquies Saw Power"
         class="w-full h-full object-cover"
-        width="800"
-        height="800"
+        width="1920"
+        height="1080"
         fetchpriority="high"
         decoding="async"
       />
@@ -16,8 +16,43 @@
     </div>
 
     <UContainer class="relative z-10">
-      <div class="max-w-4xl mx-auto text-center py-20 lg:py-24">
-        <div class="mb-6 inline-flex hero-reveal hero-reveal-d1">
+      <div class="relative max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-24">
+        <div
+          v-if="motionOk"
+          class="hero-reveal hero-reveal-d1 hero-boomerang-slot"
+        >
+          <div class="hero-boomerang rounded-xl sm:rounded-2xl overflow-hidden border border-white/30 sm:border-2 sm:border-white/35 shadow-[0_8px_28px_rgb(0_0_0/0.4)] sm:shadow-[0_16px_48px_rgb(0_0_0/0.45)] bg-[var(--navy)]">
+            <img
+              :src="boomerangPoster"
+              alt=""
+              class="hero-boomerang__poster aspect-[3/4] w-full object-cover sm:aspect-[9/16]"
+              :class="{ 'opacity-0': boomerangPlaying }"
+              width="208"
+              height="370"
+              decoding="async"
+              aria-hidden="true"
+            />
+            <video
+              ref="boomerangVideo"
+              class="hero-boomerang__video aspect-[3/4] w-full object-cover sm:aspect-[9/16]"
+              :class="{ 'opacity-100': boomerangPlaying }"
+              :poster="boomerangPoster"
+              :src="heroVideoBoomerang"
+              muted
+              playsinline
+              loop
+              autoplay
+              preload="metadata"
+              aria-label="Luces del turbo Coquies en un evento"
+              @canplay="onBoomerangReady"
+            />
+          </div>
+          <p class="hero-boomerang__label mt-1 text-[0.65rem] font-medium text-white/75 sm:mt-2 sm:text-xs">
+            Luces en vivo
+          </p>
+        </div>
+
+        <div class="mb-6 inline-flex hero-reveal hero-reveal-d0 max-sm:pr-[5.25rem]">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/25 backdrop-blur-md shadow-lg">
             <Icon name="i-heroicons-star" class="w-4 h-4 text-[var(--gold)]" />
             <span class="text-sm font-semibold text-white">Más de 10 años de experiencia</span>
@@ -76,10 +111,29 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import StatItem from '@/components/StatItem.vue'
-import { heroPhoto } from '@/data/media'
+import { heroBoomerangPoster, heroPhoto, heroVideoBoomerang } from '@/data/media'
 
 const heroImage = heroPhoto
+const boomerangPoster = heroBoomerangPoster
+const motionOk = ref(false)
+const boomerangPlaying = ref(false)
+const boomerangVideo = ref<HTMLVideoElement | null>(null)
+
+function onBoomerangReady() {
+  boomerangPlaying.value = true
+}
+
+onMounted(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  motionOk.value = !reduceMotion
+  if (motionOk.value) {
+    boomerangVideo.value?.play().catch(() => {
+      boomerangPlaying.value = false
+    })
+  }
+})
 
 const stats = [
   { value: 500, suffix: '+', label: 'Eventos Realizados' },
@@ -96,6 +150,9 @@ const stats = [
   animation: hero-in 0.65s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
+.hero-reveal-d0 {
+  animation-delay: 0.08s;
+}
 .hero-reveal-d1 {
   animation-delay: 0.12s;
 }
@@ -122,6 +179,52 @@ const stats = [
 .hero-cta-secondary {
   border-width: 2px;
   box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+}
+
+/* Pequeño en móvil (esquina), más grande en tablet+ sin tapar el titular */
+.hero-boomerang-slot {
+  position: absolute;
+  z-index: 20;
+  top: 0.25rem;
+  right: 0;
+  width: 4.85rem;
+}
+
+@media (min-width: 640px) {
+  .hero-boomerang-slot {
+    top: 1.5rem;
+    right: 0;
+    width: 10.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-boomerang-slot {
+    top: 2rem;
+    right: -0.5rem;
+    width: 12.75rem;
+  }
+}
+
+.hero-boomerang {
+  position: relative;
+}
+
+.hero-boomerang__poster,
+.hero-boomerang__video {
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+.hero-boomerang__video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+}
+
+.hero-boomerang__video.opacity-100 {
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

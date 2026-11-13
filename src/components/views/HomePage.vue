@@ -48,7 +48,9 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
             <h2 class="text-3xl font-bold">Así se ven nuestros eventos</h2>
-            <p class="text-white/70 mt-2 max-w-xl">Material real de montajes, fiestas y equipos en Santa Marta.</p>
+            <p class="text-white/70 mt-2 max-w-xl">
+              Cabinas profesionales, montajes, picó y fiestas — trabajo real en Santa Marta.
+            </p>
           </div>
           <UButton to="/galeria" color="white" variant="outline">Ver galería</UButton>
         </div>
@@ -142,10 +144,10 @@ import ServiceCard from '@/components/ServiceCard.vue'
 import TestimonialCard from '@/components/TestimonialCard.vue'
 
 const eventShots = [
-  '/media/gallery/05-evento-5-thumb.webp',
-  '/media/gallery/07-evento-7-thumb.webp',
+  '/media/gallery/18-dj-atardecer-thumb.webp',
+  '/media/gallery/20-dj-recepcion-thumb.webp',
   '/media/gallery/03-evento-3-thumb.webp',
-  '/media/gallery/08-evento-8-thumb.webp',
+  '/media/gallery/21-turbo-coquies-luces-thumb.webp',
 ]
 
 const services: Service[] = [
@@ -168,7 +170,7 @@ const services: Service[] = [
     title: 'Turbo (Picó)',
     description: 'Servicio de Turbo o Picó completo con sonido potente y efectos de luces espectaculares.',
     icon: 'i-heroicons-truck',
-    image: '/media/gallery/16-turbo-coquies-thumb.webp',
+    image: '/media/gallery/21-turbo-coquies-luces-thumb.webp',
     slug: 'turbo-pico',
     features: [
       'Sonido de alta potencia',
@@ -196,7 +198,7 @@ const services: Service[] = [
     title: 'Servicios de DJ',
     description: 'DJs profesionales con amplia experiencia y música para todos los gustos.',
     icon: 'i-heroicons-musical-note',
-    image: '/media/gallery/05-evento-5-thumb.webp',
+    image: '/media/gallery/18-dj-atardecer-thumb.webp',
     slug: 'dj',
     features: [
       'DJs profesionales',
