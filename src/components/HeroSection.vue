@@ -16,43 +16,43 @@
     </div>
 
     <UContainer class="relative z-10">
-      <div class="relative max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-24">
-        <div
-          v-if="motionOk"
-          class="hero-reveal hero-reveal-d1 hero-boomerang-slot"
-        >
-          <div class="hero-boomerang rounded-xl sm:rounded-2xl overflow-hidden border border-white/30 sm:border-2 sm:border-white/35 shadow-[0_8px_28px_rgb(0_0_0/0.4)] sm:shadow-[0_16px_48px_rgb(0_0_0/0.45)] bg-[var(--navy)]">
-            <img
-              :src="boomerangPoster"
-              alt=""
-              class="hero-boomerang__poster aspect-[3/4] w-full object-cover sm:aspect-[9/16]"
-              :class="{ 'opacity-0': boomerangPlaying }"
-              width="208"
-              height="370"
-              decoding="async"
-              aria-hidden="true"
-            />
-            <video
-              ref="boomerangVideo"
-              class="hero-boomerang__video aspect-[3/4] w-full object-cover sm:aspect-[9/16]"
-              :class="{ 'opacity-100': boomerangPlaying }"
-              :poster="boomerangPoster"
-              :src="heroVideoBoomerang"
-              muted
-              playsinline
-              loop
-              autoplay
-              preload="metadata"
-              aria-label="Luces del turbo Coquies en un evento"
-              @canplay="onBoomerangReady"
-            />
-          </div>
-          <p class="hero-boomerang__label mt-1 text-[0.65rem] font-medium text-white/75 sm:mt-2 sm:text-xs">
-            Luces en vivo
-          </p>
+      <div
+        v-if="motionOk"
+        class="hero-reveal hero-reveal-d1 hero-boomerang-slot lg:hidden"
+      >
+        <div class="hero-boomerang rounded-xl overflow-hidden border border-white/30 shadow-[0_8px_28px_rgb(0_0_0/0.4)] bg-[var(--navy)]">
+          <img
+            :src="boomerangPoster"
+            alt=""
+            class="hero-boomerang__poster aspect-[3/4] w-full object-cover"
+            :class="{ 'opacity-0': boomerangPlaying }"
+            width="208"
+            height="370"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <video
+            ref="boomerangVideo"
+            class="hero-boomerang__video aspect-[3/4] w-full object-cover"
+            :class="{ 'opacity-100': boomerangPlaying }"
+            :poster="boomerangPoster"
+            :src="heroVideoBoomerang"
+            muted
+            playsinline
+            loop
+            autoplay
+            preload="metadata"
+            aria-label="Luces del turbo Coquies en un evento"
+            @canplay="onBoomerangReady"
+          />
         </div>
+        <p class="hero-boomerang__label mt-1 text-center text-[0.65rem] font-medium text-white/75">
+          Luces en vivo
+        </p>
+      </div>
 
-        <div class="mb-6 inline-flex hero-reveal hero-reveal-d0 max-sm:pr-[5.25rem]">
+      <div class="relative max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-24">
+        <div class="mb-6 inline-flex hero-reveal hero-reveal-d0 max-lg:pr-[5.25rem]">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/25 backdrop-blur-md shadow-lg">
             <Icon name="i-heroicons-star" class="w-4 h-4 text-[var(--gold)]" />
             <span class="text-sm font-semibold text-white">Más de 10 años de experiencia</span>
@@ -181,28 +181,20 @@ const stats = [
   box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
 }
 
-/* Pequeño en móvil (esquina), más grande en tablet+ sin tapar el titular */
+/* Esquina superior derecha del contenedor; oculto en lg+ para no tapar el titular en desktop */
 .hero-boomerang-slot {
   position: absolute;
   z-index: 20;
   top: 0.25rem;
-  right: 0;
+  right: 0.75rem;
   width: 4.85rem;
 }
 
 @media (min-width: 640px) {
   .hero-boomerang-slot {
-    top: 1.5rem;
-    right: 0;
-    width: 10.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-boomerang-slot {
-    top: 2rem;
-    right: -0.5rem;
-    width: 12.75rem;
+    top: 1rem;
+    right: 1rem;
+    width: 6.5rem;
   }
 }
 
